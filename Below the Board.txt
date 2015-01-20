@@ -1,0 +1,19 @@
+<script type="text/javascript">
+(function(){
+var re = /\[progress=(\d*?)%\]/gi;
+$(".c_post").each(function(){
+$(this).html($(this).html().replace(re, '<div class="full_progress" title="Progress: $1%"></div><div class="part_progress" style="width:$1px;" title="Progress: $1%"></div>'));
+});
+})();
+
+if(/\/post/.test(location.pathname)){
+$("#c_bbcode button:last").after(' <button onmouseover="$(\'input[name=helpbox]\').attr(\'value\',\'Insert Progress Bar\')" onclick="progress_bar()" name="Progress Bar">Progress Bar</button>');
+};
+
+function progress_bar(){
+var progress = prompt("Enter the percent value", "");
+$("#c_post-text").val(function(i, v){
+return v + "[progress=" + progress + "%]";
+}).focus();
+};
+</script>

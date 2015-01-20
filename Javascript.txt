@@ -1,0 +1,15 @@
+<style type="text/css">
+.full_progress, .part_progress {
+background-color:red;
+border:none;
+height:6px;
+padding:0;
+margin:2px;
+width:100px;
+}
+
+.part_progress {
+background-color:blue;
+margin-top:-8px;
+}
+</style>
